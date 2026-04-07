@@ -11,13 +11,24 @@ public class Main {
         int top = 0, bottom = n - 1, left = 0, right = n - 1;
 
         while (val <= n * n) {
-            for (int i = left; i <= right && val <= n * n; i++) matrix[top][i] = val++;
+            for (int i = left; i <= right && val <= n * n; i++) {
+                matrix[top][i] = val++;
+            }
             top++;
-            for (int i = top; i <= bottom && val <= n * n; i++) matrix[i][right] = val++;
+
+            for (int i = top; i <= bottom && val <= n * n; i++) {
+                matrix[i][right] = val++;
+            }
             right--;
-            for (int i = right; i >= left && val <= n * n; i--) matrix[bottom][i] = val++;
+
+            for (int i = right; i >= left && val <= n * n; i--) {
+                matrix[bottom][i] = val++;
+            }
             bottom--;
-            for (int i = bottom; i >= top && val <= n * n; i--) matrix[i][left] = val++;
+
+            for (int i = bottom; i >= top && val <= n * n; i--) {
+                matrix[i][left] = val++;
+            }
             left++;
         }
 
@@ -25,15 +36,12 @@ public class Main {
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
                 System.out.print(matrix[i][j] + (j == n - 1 ? "" : " "));
+                if (i == j) {
+                    diagonalSum += matrix[i][j];
+                }
             }
             System.out.println();
-            diagonalSum += matrix[i][i];
         }
-        
-        if (n > 3 && n % 2 == 0) {
-            diagonalSum += matrix[n-1][0];
-        }
-
         System.out.println("Diagonal: " + diagonalSum);
     }
 }
