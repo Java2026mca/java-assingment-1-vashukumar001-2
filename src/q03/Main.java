@@ -48,8 +48,15 @@ public class Main {
                 if (j != n - 1) System.out.print(" ");
             }
             System.out.println();
+
             diagonalSum += matrix[i][i];
+            diagonalSum += matrix[i][n - 1 - i];
         }
-        System.out.println("Diagonal: " + diagonalSum);
+
+        if (n % 2 == 1) {
+            diagonalSum -= matrix[n / 2][n / 2];
+        }
+
+        System.out.println("Diagonal1: " + diagonalSum);
     }
 }
