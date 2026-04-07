@@ -50,8 +50,6 @@ public class Main {
             System.out.println();
             diagonalSum += matrix[i][i];
         }
-
-        // ✅ EXACT expected format
         System.out.println("Diagonal: " + diagonalSum);
     }
 }
