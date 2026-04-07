@@ -40,19 +40,18 @@ public class Main {
             }
         }
 
+        int diagonalSum = 0;
+
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
                 System.out.print(matrix[i][j]);
                 if (j != n - 1) System.out.print(" ");
             }
             System.out.println();
-        }
-
-        int diagonalSum = 0;
-        for (int i = 0; i < n; i++) {
             diagonalSum += matrix[i][i];
         }
 
-        System.out.println("Diagonal1: " + diagonalSum);
+        // ✅ EXACT expected format
+        System.out.println("Diagonal: " + diagonalSum);
     }
 }
