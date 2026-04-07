@@ -6,6 +6,7 @@ public class Main {
 
         if (!sc.hasNextInt()) return;
         int n = sc.nextInt();
+        
         int[][] matrix = new int[n][n];
         int val = 1;
         int top = 0, bottom = n - 1, left = 0, right = n - 1;
@@ -36,12 +37,13 @@ public class Main {
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
                 System.out.print(matrix[i][j] + (j == n - 1 ? "" : " "));
-                if (i == j) {
+                if (i == j || i + j == n - 1) {
                     diagonalSum += matrix[i][j];
                 }
             }
             System.out.println();
         }
+        
         System.out.println("Diagonal: " + diagonalSum);
     }
 }
